@@ -28,4 +28,7 @@ class Stats_model extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->delete($this->table);
     }
+    public function count_all() {
+        return $this->db->count_all('stats');
+    }
 }

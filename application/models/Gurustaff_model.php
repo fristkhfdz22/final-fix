@@ -29,4 +29,7 @@ class Gurustaff_model extends CI_Model
     {
         return $this->db->delete('gurustaff', array('id' => $id));
     }
+    public function count_all() {
+        return $this->db->count_all('gurustaff');
+    }
 }

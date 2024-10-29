@@ -20,5 +20,8 @@ class User_model extends CI_Model {
 
         return false; // Mengembalikan false jika tidak ada pengguna atau password tidak cocok
     }
+    public function count_all() {
+        return $this->db->count_all('user');
+    }
 
 }

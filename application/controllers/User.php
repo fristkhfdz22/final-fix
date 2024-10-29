@@ -36,6 +36,8 @@ class User extends CI_Controller
         $data['kontak'] = $this->Kontak_model->get_all(); // Ambil semua data kontak
         $data['kritiksaran'] = $this->Kritiksaran_model->get_all(); // Ambil semua data k
         $data['stats'] = $this->Stats_model->get_latest(); // Mengambil data terbaru
+    
+        
         
         
 
@@ -52,7 +54,7 @@ class User extends CI_Controller
         $this->load->view('user/kontak', $data);
 
         $this->load->view('user/kritiksaran', $data);
-        $this->load->view('user/rombel');
+        $this->load->view('user/rombel', $data);
 
         $this->load->view('user/footer', $data);
     }

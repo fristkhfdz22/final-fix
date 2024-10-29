@@ -61,8 +61,6 @@
 
                                 <li><a class="dropdown-item" href="<?= base_url('sejarah-user'); ?>">Sejarah</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('visimisi'); ?>">Visi & Misi</a></li>
-                                <li><a class="dropdown-item" href="#">Kondisi Sekolah</a></li>
-                                <li><a class="dropdown-item" href="<?= base_url('sarana_prasarana'); ?>">Sarana Prasarana</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('gurustaff/detail/'); ?>">Guru dan Staff</a></li>
                             </ul>
                         </li>
@@ -76,39 +74,30 @@
                                 Berita
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="beritaDropdown">
-                                <li><a class="dropdown-item" href="#beritaterbaru">Berita Terbaru</a></li>
-                                <li><a class="dropdown-item" href="<?= base_url('info_ppdb'); ?>">Info Sekolah</a></li>
-                                <li><a class="dropdown-item" href="#">Agenda</a></li>
-                                <li><a class="dropdown-item" href="<?= base_url('galeri/view'); ?>">Galeri</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="<?php echo base_url('berita/detail_kedua'); ?>">Berita Terbaru</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('info_ppdb'); ?>">Info Sekolah</a></li>                            </ul>
                         </li>
         
                         <!-- Kompetensi Keahlian Dropdown -->
                         <li class="nav-item dropdown">
                             <div class="tombol">
-                            <a class="nav-link "  href="<?= base_url('jurusan'); ?>" id="kompetensiDropdown" role="button"
+                            <a class="nav-link "  href="<?= base_url('saranaprasarana/view'); ?>" id="kompetensiDropdown" role="button"
                                style="color: black;">
-                                Kompetensi Keahlian
+                              SaranaPrasarana
                             </a>
                             
                         </li>
 
-                        <!-- Ekstrakurikuler Dropdown -->
-                        <li class="nav-item dropdown">
-                            <div class="tombol">
-                                <a class="nav-link " href="<?= base_url('jurusan'); ?>"  role="button"
-                            style="color: black;">
-                                    Ekstrakurikuler
-                                </a>
+                     
                                
                         <!-- Other Menu Items -->
                         <li class="nav-item">
                             <div class="tombol">
-                            <a class="nav-link smooth-menu" href="#prestasi" style="color: black;">Prestasi</a>
+                            <a class="nav-link smooth-menu" href="<?= base_url('galeri/view'); ?>" style="color: black;">Galeri</a>
                         </li>
                         <li class="nav-item">
                             <div class="tombol">
-                            <a class="nav-link smooth-menu" href="#kontak" style="color: black;">Kontak</a>
+                            <a class="nav-link smooth-menu" href="<?= base_url('visimisi'); ?>" style="color: black;">Visi&Misi</a>
                         </li>
                         <li class="nav-item">
                             <div class="tombol">

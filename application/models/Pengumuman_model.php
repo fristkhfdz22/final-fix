@@ -46,5 +46,8 @@ class Pengumuman_model extends CI_Model {
 
 
     // Restore a soft-deleted entry
+    public function count_all() {
+        return $this->db->count_all('pengumuman');
+    }
     
 }

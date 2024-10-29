@@ -50,5 +50,8 @@ class Berita_model extends CI_Model {
             return false; // Return false if upload fails
         }
     }
+    public function count_all() {
+        return $this->db->count_all('berita');
+    }
 }
 ?>

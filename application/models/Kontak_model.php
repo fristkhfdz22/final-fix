@@ -34,4 +34,7 @@ class Kontak_model extends CI_Model
         $this->db->where('id', $id);
         return $this->db->delete('kontak');
     }
+    public function count_all() {
+        return $this->db->count_all('kontak');
+    }
 }

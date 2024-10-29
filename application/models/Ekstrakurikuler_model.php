@@ -23,4 +23,7 @@ class Ekstrakurikuler_model extends CI_Model {
     public function delete_eskul($id) {
         return $this->db->delete('ekstrakurikuler', ['id' => $id]);
     }
+    public function count_all() {
+        return $this->db->count_all('ekstrakurikuler');
+    }
 }

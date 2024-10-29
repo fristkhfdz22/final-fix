@@ -39,4 +39,7 @@ public function get_by_id($id)
     public function delete_jurusan($id) {
         $this->db->delete('jurusan', ['id' => $id]);
     }
+    public function count_all() {
+        return $this->db->count_all('jurusan');
+    }
 }

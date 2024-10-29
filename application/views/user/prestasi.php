@@ -16,7 +16,7 @@
     }
 </style>
 
-<div class="judul" style="color: black;">
+<div class="judul" style="color: black; "id="prestasi">
     <h1>Prestasi</h1>
     <div class="underline"></div>
 </div>
@@ -33,11 +33,13 @@
                                 <?php if (is_object($item)): ?>
                                     <div class="col-4 p-2">
                                         <div class="card">
+                                            <a href="<?= site_url('prestasi/detail/' . $item->id); ?>">
                                             <?php if (!empty($item->gambar) && file_exists('uploads/prestasi/' . $item->gambar)): ?>
                                                 <img src="<?= base_url('uploads/prestasi/' . $item->gambar); ?>" class="card-img-top" alt="<?= htmlspecialchars($item->judul); ?>" style="height: 200px; object-fit: cover;">
                                             <?php else: ?>
                                                 <img src="<?= base_url('uploads/default-image.jpg'); ?>" class="card-img-top" alt="Gambar Default" style="height: 200px; object-fit: cover;"> <!-- Gambar default -->
                                             <?php endif; ?>
+                                            </a>
                                             <div class="card-body">
                                                 <h5 class="card-title"><?= isset($item->judul) ? htmlspecialchars($item->judul) : 'Judul Tidak Tersedia'; ?></h5>
                                                 <p class="card-text"><?= isset($item->deskripsi) ? htmlspecialchars($item->deskripsi) : 'Deskripsi Tidak Tersedia'; ?></p>

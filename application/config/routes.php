@@ -58,6 +58,7 @@ $route['ekstrakurikuler/tambah'] = 'ekstrakurikuler/tambah';
 $route['ekstrakurikuler/edit/(:any)'] = 'ekstrakurikuler/edit/$1';    // Menggunakan slug
 $route['ekstrakurikuler/hapus/(:any)'] = 'ekstrakurikuler/hapus/$1';  // Menggunakan slug
 $route['ekstrakurikuler/detail/(:any)'] = 'eskuldetail/index/$1';     // Menggunakan slug
+
 $route['berita/detail/(:num)'] = 'BeritaDetail/index/$1';
 
 // $route['jurusan/detail/(:num)'] = 'JurusanDetail/index/$1';
@@ -127,11 +128,14 @@ $route['admin/infoppdb/delete/(:num)'] = 'InfoPpdb/delete/$1';
 // Routing untuk tampilan user info_ppdb
 $route['info_ppdb'] = 'InfoPpdb/view';
 
-$route['sarana_prasarana'] = 'SaranaPrasarana/view';
-$route['saranaprasarana'] = 'SaranaPrasarana/index'; // Menampilkan daftar sarana prasarana
-$route['saranaprasarana/form'] = 'SaranaPrasarana/form'; // Menampilkan form untuk tambah data
-$route['saranaprasarana/form/(:any)'] = 'SaranaPrasarana/form/$1'; // Menampilkan form untuk edit data berdasarkan ID
-$route['saranaprasarana/delete/(:any)'] = 'SaranaPrasarana/delete/$1'; // Menghapus data berdasarkan ID
+$route['saranaprasarana/admin'] = 'saranaprasarana/index';
+$route['saranaprasarana/create'] = 'saranaprasarana/create';
+$route['saranaprasarana/store'] = 'saranaprasarana/store';
+$route['saranaprasarana/edit/(:num)'] = 'saranaprasarana/edit/$1';
+$route['saranaprasarana/update/(:num)'] = 'saranaprasarana/update/$1';
+$route['saranaprasarana/delete/(:num)'] = 'saranaprasarana/delete/$1';
+$route['saranaprasarana'] = 'saranaprasarana/view';
+
 $route['galeri'] = 'galeri/index'; // untuk tampilan user
 $route['admin/galeri'] = 'galeri/index'; // untuk tampilan admin
 
@@ -148,10 +152,6 @@ $route['stats/store'] = 'stats/store';
 $route['stats/edit/(:any)'] = 'stats/edit/$1';
 $route['stats/update/(:any)'] = 'stats/update/$1';
 $route['stats/delete/(:any)'] = 'stats/delete/$1';
-
-
-
-
 
 
 

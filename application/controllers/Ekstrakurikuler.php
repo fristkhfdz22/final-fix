@@ -19,7 +19,7 @@ class Ekstrakurikuler extends CI_Controller {
     public function view() {
         $data['ekstrakurikuler'] = $this->Ekstrakurikuler_model->get_all_ekstrakurikuler();
         $this->load->view('user/header');
-                $this->load->view('user/eskul', $data);
+        $this->load->view('user/eskul', $data);
         $this->load->view('user/footer');
     }
 

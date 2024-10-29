@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin');?>">
+                <a class="nav-link" href="<?php echo base_url('admin/dashboard');?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -67,6 +67,8 @@
                         <a class="collapse-item" href="<?php echo base_url('admin/kritiksaran'); ?>">Kritik & saran</a>
                         <a class="collapse-item" href="<?= base_url('admin/Visimisi'); ?>">Visi & Misi</a>
                         <a class="collapse-item" href="<?php echo site_url('admin/galeri'); ?>">Galery</a>
+                        <a class="collapse-item" href="<?php echo site_url('saranaprasarana/admin'); ?>">SaranaPrasarana</a>
+
 
 
                     </div>
@@ -257,7 +259,7 @@
                                 aria-labelledby="userDropdown">
                                 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="<?php echo site_url('admin'); ?>" >
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

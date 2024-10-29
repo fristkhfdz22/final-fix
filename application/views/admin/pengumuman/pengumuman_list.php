@@ -8,7 +8,6 @@
     
 
 
-    <div id="layoutSidenav_content">
              
                     <div class="container-fluid px-4">
                     <a href="<?php echo base_url('pengumuman/create'); ?>" class="btn btn-primary">Tambah Pengumuman</a>
@@ -39,6 +38,6 @@
             <?php endforeach; ?>
         </tbody>
                     </div>
-                </main>
+
                
             

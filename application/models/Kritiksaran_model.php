@@ -23,4 +23,7 @@ class Kritiksaran_model extends CI_Model
         $query = $this->db->get($this->table);
         return $query->result();
     }
+    public function count_all() {
+        return $this->db->count_all('kritiksaran');
+    }
 }

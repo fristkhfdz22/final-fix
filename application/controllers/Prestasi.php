@@ -88,4 +88,14 @@ class Prestasi extends CI_Controller {
         $this->Prestasi_model->delete_prestasi($id);
         redirect('prestasi');
     }
+    public function detail($id) {
+        $data['prestasi'] = $this->Prestasi_model->get_by_id($id);
+
+        if (!$data['prestasi']) {
+            show_404(); // Tampilkan halaman 404 jika ID tidak valid
+        }
+        $this->load->view('user/header');
+        $this->load->view('user/prestasi/detail', $data);
+        $this->load->view('user/footer');
+    }
 }

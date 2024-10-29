@@ -9,10 +9,10 @@ class Prestasi_model extends CI_Model {
         return $query->result(); // Mengembalikan hasil sebagai array objek
     }
 
-    public function get_prestasi_by_id($id) {
-        return $this->db->get_where('prestasi', ['id' => $id])->row_array();
-    }
 
+    public function get_by_id($id) {
+        return $this->db->get_where('prestasi', ['id' => $id])->row();
+    }
     public function insert_prestasi($data) {
         return $this->db->insert('prestasi', $data);
     }
@@ -25,5 +25,8 @@ class Prestasi_model extends CI_Model {
     public function delete_prestasi($id) {
         $this->db->where('id', $id);
         return $this->db->delete('prestasi');
+    }
+    public function count_all() {
+        return $this->db->count_all('prestasi');
     }
 }

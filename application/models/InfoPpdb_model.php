@@ -16,6 +16,7 @@ class InfoPpdb_model extends CI_Model {
     public function get_all() {
         return $this->db->get('info_ppdb')->result(); // Mengambil semua data dari tabel
     }
+    
 
     // Method lainnya sesuai kebutuhan
     public function insert($data) {
@@ -32,5 +33,8 @@ class InfoPpdb_model extends CI_Model {
 
     public function get_by_id($id) {
         return $this->db->get_where('info_ppdb', ['id' => $id])->row(); // Mengambil data berdasarkan ID
+    }
+    public function count_all() {
+        return $this->db->count_all('info_ppdb');
     }
 }

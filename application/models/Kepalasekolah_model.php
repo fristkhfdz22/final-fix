@@ -71,5 +71,8 @@ class Kepalasekolah_model extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->delete('kepalasekolah'); // Delete the entry from the table
     }
+    public function count_all() {
+        return $this->db->count_all('kepalasekolah');
+    }
     
 }

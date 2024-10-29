@@ -19,9 +19,10 @@ class InfoPpdb extends CI_Controller {
     }
     public function view() {
         $data['info_ppdb'] = $this->InfoPpdb_model->get_all(); // Mengambil semua data
+        
         $this->load->view('user/header');
         $this->load->view('user/info_ppdb', $data);
-        $this->load->view('user/footer');
+        $this->load->view('user/footer', $data);
     }
     
 
