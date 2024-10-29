@@ -10,7 +10,9 @@
     <header>
         <!-- Tambahkan kode header di sini -->
     </header>
-
+<br>
+<br>
+<br><br>
 <style>
     .imagekepalasekolah1 {
         display: flex; /* Menggunakan Flexbox */

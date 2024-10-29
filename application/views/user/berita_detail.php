@@ -86,10 +86,13 @@
             <p class="text-center">Belum ada berita yang tersedia.</p>
         <?php endif; ?>
     </div>
+    </div>
 
 
 
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 </body>
 </html>

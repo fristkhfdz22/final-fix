@@ -1,5 +1,6 @@
 <!-- kompetensikeahlian -->
-<div class="blue-container">
+ <br><br><br><br>
+<div class="blue-container" id="jr">
     <div class="judul" style="color: black;">
         <h1>Kompetensi Keahlian</h1>
     </div>

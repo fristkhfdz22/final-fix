@@ -16,7 +16,7 @@
         flex: 1; /* Membuat card mengisi ruang yang tersedia */
     }
 </style>
-<div class="judul" style="color: black;">
+<div class="judul" id="#jr" style="color: black;">
     <h1>Ekstrakurikuler</h1>
     <div class="underline"></div>
 </div>

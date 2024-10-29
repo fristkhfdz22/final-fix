@@ -16,6 +16,12 @@ class Ekstrakurikuler extends CI_Controller {
         $this->load->view('admin/eskul/ekstrakurikuler_list', $data);
         $this->load->view('admin/footer');
     }
+    public function view() {
+        $data['ekstrakurikuler'] = $this->Ekstrakurikuler_model->get_all_ekstrakurikuler();
+        $this->load->view('user/header');
+                $this->load->view('user/eskul', $data);
+        $this->load->view('user/footer');
+    }
 
     private function _upload_file($field_name, $upload_path) {
         $config['upload_path'] = './uploads/ekstrakurikuler';

@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
 </head>
 
@@ -61,7 +62,7 @@
                                 <li><a class="dropdown-item" href="<?= base_url('sejarah-user'); ?>">Sejarah</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('visimisi'); ?>">Visi & Misi</a></li>
                                 <li><a class="dropdown-item" href="#">Kondisi Sekolah</a></li>
-                                <li><a class="dropdown-item" href="#">Sarana Prasarana</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('sarana_prasarana'); ?>">Sarana Prasarana</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('gurustaff/detail/'); ?>">Guru dan Staff</a></li>
                             </ul>
                         </li>
@@ -78,53 +79,28 @@
                                 <li><a class="dropdown-item" href="#beritaterbaru">Berita Terbaru</a></li>
                                 <li><a class="dropdown-item" href="<?= base_url('info_ppdb'); ?>">Info Sekolah</a></li>
                                 <li><a class="dropdown-item" href="#">Agenda</a></li>
-                                <li><a class="dropdown-item" href="galeri.html">Galeri</a></li>
+                                <li><a class="dropdown-item" href="<?= base_url('galeri/view'); ?>">Galeri</a></li>
                             </ul>
                         </li>
         
                         <!-- Kompetensi Keahlian Dropdown -->
                         <li class="nav-item dropdown">
                             <div class="tombol">
-                            <a class="nav-link dropdown-toggle" href="#" id="kompetensiDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                            <a class="nav-link "  href="<?= base_url('jurusan'); ?>" id="kompetensiDropdown" role="button"
+                               style="color: black;">
                                 Kompetensi Keahlian
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="kompetensiDropdown">
-                                <li><a class="dropdown-item" href="pplg.html">PPLG</a></li>
-                                <li><a class="dropdown-item" href="tjkt.html">TJKT</a></li>
-                                <li><a class="dropdown-item" href="bp.html">BP</a></li>
-                                <li><a class="dropdown-item" href="pm.html">PM</a></li>
-                                <li><a class="dropdown-item" href="akl.html">AKL</a></li>
-                                <li><a class="dropdown-item" href="mplb.html">MPLB</a></li>
-                            </ul>
+                            
                         </li>
 
                         <!-- Ekstrakurikuler Dropdown -->
                         <li class="nav-item dropdown">
                             <div class="tombol">
-                                <a class="nav-link dropdown-toggle" href="#" id="ekstrakurikulerDropdown" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                <a class="nav-link " href="<?= base_url('jurusan'); ?>"  role="button"
+                            style="color: black;">
                                     Ekstrakurikuler
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="ekstrakurikulerDropdown">
-                                    <li><a class="dropdown-item" href="paskibra.html">Paskibra</a></li>
-                                    <li><a class="dropdown-item" href="pks.html">Pks</a></li>
-                                    <li><a class="dropdown-item" href="pramuka.html">Pramuka</a></li>
-                                    <li><a class="dropdown-item" href="rohis.html">Rohis</a></li>
-                                    <li><a class="dropdown-item" href="pmr.html">Pmr</a></li>
-                                    <li><a class="dropdown-item" href="voli.html">Bola Voli</a></li>
-                                    <li><a class="dropdown-item" href="basket.html">Basket</a></li>
-                                    <li><a class="dropdown-item" href="silat.html">Silat</a></li>
-                                    <li><a class="dropdown-item" href="robotik.html">Robotik</a></li>
-                                    <li><a class="dropdown-item" href="karate.html">Karate</a></li>
-                                    <li><a class="dropdown-item" href="tenismeja.html">Tenis Meja</a></li>
-                                    <li><a class="dropdown-item" href="sbq.html">SBQ</a></li>
-                                    <li><a class="dropdown-item" href="senimusik.html">Seni Musik</a></li>
-                                    <li><a class="dropdown-item" href="senitari.html">Seni Tari</a></li>
-                                    <li><a class="dropdown-item" href="keputrian.html">Keputrian</a></li>
-                                    <li><a class="dropdown-item" href="futsal.html">Futsal</a></li>
-                                </ul>
-       
+                               
                         <!-- Other Menu Items -->
                         <li class="nav-item">
                             <div class="tombol">

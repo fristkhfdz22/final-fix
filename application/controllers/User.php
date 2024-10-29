@@ -16,6 +16,7 @@ class User extends CI_Controller
         $this->load->model('Gurustaff_model'); // Memuat model Gurustaff
         $this->load->model('Kontak_model');
         $this->load->model('Kritiksaran_model');
+        $this->load->model('Stats_model'); // Memuat model
         $this->load->helper('text');
     }
 
@@ -34,6 +35,8 @@ class User extends CI_Controller
         $data['gurustaff'] = $this->Gurustaff_model->get_all(); // Pastikan ini menggunakan get_all()
         $data['kontak'] = $this->Kontak_model->get_all(); // Ambil semua data kontak
         $data['kritiksaran'] = $this->Kritiksaran_model->get_all(); // Ambil semua data k
+        $data['stats'] = $this->Stats_model->get_latest(); // Mengambil data terbaru
+        
         
 
         // Memuat tampilan dan mengirimkan data
@@ -51,6 +54,6 @@ class User extends CI_Controller
         $this->load->view('user/kritiksaran', $data);
         $this->load->view('user/rombel');
 
-        $this->load->view('user/footer');
+        $this->load->view('user/footer', $data);
     }
 }

@@ -59,7 +59,8 @@ $route['ekstrakurikuler/edit/(:any)'] = 'ekstrakurikuler/edit/$1';    // Menggun
 $route['ekstrakurikuler/hapus/(:any)'] = 'ekstrakurikuler/hapus/$1';  // Menggunakan slug
 $route['ekstrakurikuler/detail/(:any)'] = 'eskuldetail/index/$1';     // Menggunakan slug
 $route['berita/detail/(:num)'] = 'BeritaDetail/index/$1';
-$route['jurusan/detail/(:num)'] = 'JurusanDetail/index/$1';
+
+// $route['jurusan/detail/(:num)'] = 'JurusanDetail/index/$1';
 
 $route['prestasi'] = 'prestasi/index';                 // Menampilkan daftar prestasi
 $route['prestasi/tambah'] = 'prestasi/tambah';         // Menampilkan form tambah prestasi
@@ -90,6 +91,8 @@ $route['admin/berita'] = 'berita'; // To list all berita
 $route['admin/berita/tambah'] = 'berita/tambah'; // To add berita
 $route['admin/berita/edit/(:num)'] = 'berita/edit/$1'; // To edit berita
 $route['admin/berita/delete/(:num)'] = 'berita/delete/$1'; // To delete berita
+$route['jurusan'] = 'jurusan/view';
+
 $route['admin/jurusan'] = 'jurusan';
 $route['admin/jurusan/tambah'] = 'jurusan/tambah';
 $route['admin/jurusan/edit/(:num)'] = 'jurusan/edit/$1';
@@ -123,6 +126,31 @@ $route['admin/infoppdb/delete/(:num)'] = 'InfoPpdb/delete/$1';
 
 // Routing untuk tampilan user info_ppdb
 $route['info_ppdb'] = 'InfoPpdb/view';
+
+$route['sarana_prasarana'] = 'SaranaPrasarana/view';
+$route['saranaprasarana'] = 'SaranaPrasarana/index'; // Menampilkan daftar sarana prasarana
+$route['saranaprasarana/form'] = 'SaranaPrasarana/form'; // Menampilkan form untuk tambah data
+$route['saranaprasarana/form/(:any)'] = 'SaranaPrasarana/form/$1'; // Menampilkan form untuk edit data berdasarkan ID
+$route['saranaprasarana/delete/(:any)'] = 'SaranaPrasarana/delete/$1'; // Menghapus data berdasarkan ID
+$route['galeri'] = 'galeri/index'; // untuk tampilan user
+$route['admin/galeri'] = 'galeri/index'; // untuk tampilan admin
+
+$route['galeri/create'] = 'galeri/create'; // Menampilkan form tambah galeri
+$route['galeri/store'] = 'galeri/store'; // Menyimpan data galeri baru
+$route['galeri/edit/(:any)'] = 'galeri/edit/$1'; // Menampilkan form edit galeri
+$route['galeri/update/(:any)'] = 'galeri/update/$1'; // Mengupdate data galeri
+$route['galeri/delete/(:any)'] = 'galeri/delete/$1'; // Menghapus galeri
+
+$route['galeri/view'] = 'galeri/view'; // Rute untuk tampilan galeri untuk user
+$route['stats'] = 'stats/index';
+$route['stats/create'] = 'stats/create';
+$route['stats/store'] = 'stats/store';
+$route['stats/edit/(:any)'] = 'stats/edit/$1';
+$route['stats/update/(:any)'] = 'stats/update/$1';
+$route['stats/delete/(:any)'] = 'stats/delete/$1';
+
+
+
 
 
 

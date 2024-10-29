@@ -18,6 +18,12 @@ class Jurusan extends CI_Controller {
         $this->load->view('admin/jurusan/jurusan_list', $data);
         $this->load->view('admin/footer');
     }
+    public function view() {
+        $data['jurusan'] = $this->Jurusan_model->get_all_jurusan();
+        $this->load->view('user/header');
+        $this->load->view('user/jurusan', $data);
+        $this->load->view('user/footer');
+    }
 
     // Create new jurusan
     public function create() {

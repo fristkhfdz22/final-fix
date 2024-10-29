@@ -10,13 +10,7 @@ class Jurusandetail extends CI_Controller {
 
     // Menampilkan daftar atau detail jurusan
     public function index($id = null) {
-        if ($id === null) {
-            // Jika ID tidak diberikan, tampilkan daftar jurusan
-            $data['jurusan'] = $this->Jurusan_model->get_all_jurusan();
-            $this->load->view('user/header');
-            $this->load->view('user/kompetensikeahlian', $data);  // View daftar jurusan
-            $this->load->view('user/footer');
-        } else {
+       
             // Jika ID diberikan, tampilkan detail jurusan
             $data['jurusan'] = $this->Jurusan_model->get_jurusan($id);
             if (!$data['jurusan']) {
@@ -25,6 +19,6 @@ class Jurusandetail extends CI_Controller {
             $this->load->view('user/header');
             $this->load->view('user/jurusan/detail', $data);  // View detail jurusan
             $this->load->view('user/footer');
-        }
+        
     }
 }

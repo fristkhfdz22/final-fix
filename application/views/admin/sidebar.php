@@ -39,6 +39,9 @@
                         <a class="collapse-item" href="<?php echo base_url('prestasi'); ?>">prestasi</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/infoppdb'); ?>">Info PPDB</a>
                         <a class="collapse-item" href="<?php echo base_url('sejarah'); ?>">Sejarah</a>
+                        <a class="collapse-item" href="<?php echo base_url('stats'); ?>">Sejarah</a>
+
+
   
 
                     </div>
@@ -63,6 +66,8 @@
                         <a class="collapse-item" href="<?php echo base_url('kontak'); ?>">Kontak</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/kritiksaran'); ?>">Kritik & saran</a>
                         <a class="collapse-item" href="<?= base_url('admin/Visimisi'); ?>">Visi & Misi</a>
+                        <a class="collapse-item" href="<?php echo site_url('admin/galeri'); ?>">Galery</a>
+
 
                     </div>
                 </div>
