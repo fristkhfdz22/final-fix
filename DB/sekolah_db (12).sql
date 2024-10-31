@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 27, 2024 at 05:50 PM
+-- Generation Time: Oct 31, 2024 at 12:37 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.3
 
@@ -98,23 +98,30 @@ CREATE TABLE `fasilitas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galery`
+-- Table structure for table `galeri`
 --
 
-CREATE TABLE `galery` (
+CREATE TABLE `galeri` (
   `id` int NOT NULL,
   `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
-  `file_path` varchar(255) DEFAULT NULL,
-  `kategori` varchar(100) DEFAULT NULL,
-  `tipe_media` varchar(50) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
   `tanggal_upload` datetime DEFAULT CURRENT_TIMESTAMP,
-  `uploader` varchar(100) DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
   `create_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `update_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `delete_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`id`, `judul`, `deskripsi`, `img`, `tanggal_upload`, `create_at`, `update_at`, `delete_at`) VALUES
+(6, 'm', 'ssssssssssssssssssssssssssssssss', 'Picture.png', '2024-10-28 21:49:56', '2024-10-28 21:49:56', '2024-10-31 04:27:19', NULL),
+(7, 'Sambutan Kepala Sekolah', 'ssssssssss', 'jurnalistik1.jpg', '2024-10-28 22:00:27', '2024-10-28 22:00:27', '2024-10-28 22:08:13', NULL),
+(8, 'dd', 'ddddddddd', 'MPLB1.png', '2024-10-28 22:00:38', '2024-10-28 22:00:38', '2024-10-28 22:00:38', NULL),
+(9, 'Sambutan Kepala Sekolah', 'ddddddd', 'paskib_4.jpg', '2024-10-28 22:00:49', '2024-10-28 22:00:49', '2024-10-28 22:07:58', NULL),
+(14, 'Sambutan Kepala Sekolah', 'dddddd', 'akl_(2).jpg', '2024-10-31 04:26:31', '2024-10-31 04:26:31', '2024-10-31 04:26:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -164,7 +171,7 @@ CREATE TABLE `info_ppdb` (
 --
 
 INSERT INTO `info_ppdb` (`id`, `title`, `description`, `youtube`, `instagram`, `facebook`, `twitter`, `telegram`, `image`, `created_at`) VALUES
-(2, 'rrrrr', 'rrrr', 'rr', 'rr', 'rrrrrrrrl', 'rrrr', 'rrr', 'banner.png', '2024-10-27 17:34:31');
+(2, 'rrrrr', 'rrrr', 'https://youtu.be/oq7u2dSoNlk?si=ueRg4scefWlRGGAJ', 'rr', 'rrrrrrrrl', 'rrrr', 'rrr', 'banner.png', '2024-10-27 17:34:31');
 
 -- --------------------------------------------------------
 
@@ -268,7 +275,8 @@ INSERT INTO `kritiksaran` (`id`, `nama_pengirim`, `email_pengirim`, `isi_kritik_
 (5, 'khafidz rizziq', 'zaky@gmail.come', 'xxxxxx', '2024-10-25 00:13:47', NULL, NULL),
 (6, 'hasbu', 'zaky@gmail.com', 'wwwwwwwwwwwwwwww', '2024-10-25 00:24:18', NULL, NULL),
 (7, 'khafidz rizziq', 'mmm@gmail.com', 'kkkkkkk', '2024-10-25 20:35:35', NULL, NULL),
-(8, 'hasbu', 'khafidzzzzz1922@gmail.com', 'sssssss', '2024-10-26 22:16:48', NULL, NULL);
+(8, 'hasbu', 'khafidzzzzz1922@gmail.com', 'sssssss', '2024-10-26 22:16:48', NULL, NULL),
+(9, 'hasbu', 'khfdz@gmail.com', 'mmmmmmmmm', '2024-10-31 04:29:07', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -352,6 +360,26 @@ INSERT INTO `role` (`id`, `nama_role`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sarana_prasarana`
+--
+
+CREATE TABLE `sarana_prasarana` (
+  `id` int NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `jumlah` int NOT NULL,
+  `keterangan` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `sarana_prasarana`
+--
+
+INSERT INTO `sarana_prasarana` (`id`, `nama`, `jumlah`, `keterangan`) VALUES
+(1, 'khafidz rizziq', 777, 'kkk');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sejarah`
 --
 
@@ -373,20 +401,22 @@ INSERT INTO `sejarah` (`id`, `judul`, `konten`, `gambar`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Table structure for table `stats`
 --
 
-CREATE TABLE `settings` (
+CREATE TABLE `stats` (
   `id` int NOT NULL,
-  `ig` varchar(255) DEFAULT NULL,
-  `facebook` varchar(255) DEFAULT NULL,
-  `whatsapp` varchar(255) DEFAULT NULL,
-  `telegram` varchar(255) DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  `create_at` datetime DEFAULT NULL,
-  `update_at` datetime DEFAULT NULL,
-  `delete_at` datetime DEFAULT NULL
+  `jumlah_siswa` int NOT NULL,
+  `rombongan_belajar` int NOT NULL,
+  `kompetensi_keahlian` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `stats`
+--
+
+INSERT INTO `stats` (`id`, `jumlah_siswa`, `rombongan_belajar`, `kompetensi_keahlian`) VALUES
+(1, 2300, 72, 7);
 
 -- --------------------------------------------------------
 
@@ -461,11 +491,10 @@ ALTER TABLE `fasilitas`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `galery`
+-- Indexes for table `galeri`
 --
-ALTER TABLE `galery`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+ALTER TABLE `galeri`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `gurustaff`
@@ -530,6 +559,12 @@ ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sarana_prasarana`
+--
+ALTER TABLE `sarana_prasarana`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sejarah`
 --
 ALTER TABLE `sejarah`
@@ -537,11 +572,10 @@ ALTER TABLE `sejarah`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `settings`
+-- Indexes for table `stats`
 --
-ALTER TABLE `settings`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+ALTER TABLE `stats`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -581,10 +615,10 @@ ALTER TABLE `fasilitas`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `galery`
+-- AUTO_INCREMENT for table `galeri`
 --
-ALTER TABLE `galery`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `galeri`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `gurustaff`
@@ -614,7 +648,7 @@ ALTER TABLE `kepalasekolah`
 -- AUTO_INCREMENT for table `kritiksaran`
 --
 ALTER TABLE `kritiksaran`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pengumuman`
@@ -635,9 +669,21 @@ ALTER TABLE `role`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `sarana_prasarana`
+--
+ALTER TABLE `sarana_prasarana`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `sejarah`
 --
 ALTER TABLE `sejarah`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `stats`
+--
+ALTER TABLE `stats`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -667,12 +713,6 @@ ALTER TABLE `berita`
 --
 ALTER TABLE `fasilitas`
   ADD CONSTRAINT `fasilitas_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
---
--- Constraints for table `galery`
---
-ALTER TABLE `galery`
-  ADD CONSTRAINT `galery_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `gurustaff`
@@ -721,12 +761,6 @@ ALTER TABLE `prestasi`
 --
 ALTER TABLE `sejarah`
   ADD CONSTRAINT `sejarah_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
---
--- Constraints for table `settings`
---
-ALTER TABLE `settings`
-  ADD CONSTRAINT `settings_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `user`
