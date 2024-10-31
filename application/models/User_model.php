@@ -1,27 +1,27 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class User_model extends CI_Model
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    // Fungsi untuk memeriksa login
-    public function check_login($username, $password) {
-        // Mencari pengguna berdasarkan username
+    public function check_login($username, $password)
+    {
         $this->db->where('username', $username);
-        $user = $this->db->get('User')->row(); // Ambil data pengguna
+        $user = $this->db->get('User')->row();
 
-        // Jika pengguna ditemukan, periksa password
         if ($user && $user->password === md5($password)) {
-            return $user; // Mengembalikan objek pengguna jika cocok
+            return $user;
         }
 
-        return false; // Mengembalikan false jika tidak ada pengguna atau password tidak cocok
+        return false;
     }
-    public function count_all() {
+    public function count_all()
+    {
         return $this->db->count_all('user');
     }
-
 }

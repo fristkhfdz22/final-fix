@@ -3,17 +3,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Gurustaff_model extends CI_Model
 {
-    // Mendapatkan semua data guru dan staff
-    public function get_all() {
-        return $this->db->get('gurustaff')->result(); // Mengambil semua data sebagai array objek
+    public function get_all()
+    {
+        return $this->db->get('gurustaff')->result();
     }
-    public function get_by_id($id) {
+    public function get_by_id($id)
+    {
         $this->db->where('id', $id);
         $query = $this->db->get('gurustaff');
-        return $query->row(); // Mengembalikan satu baris data
+        return $query->row();
     }
 
-    // Metode lain yang mungkin Anda butuhkan
     public function create($data)
     {
         return $this->db->insert('gurustaff', $data);
@@ -29,7 +29,8 @@ class Gurustaff_model extends CI_Model
     {
         return $this->db->delete('gurustaff', array('id' => $id));
     }
-    public function count_all() {
+    public function count_all()
+    {
         return $this->db->count_all('gurustaff');
     }
 }

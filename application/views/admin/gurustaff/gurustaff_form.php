@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Form Guru & Staff</title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-</head>
-<body>
-
 <div class="container">
     <h2><?= isset($gurustaff) ? 'Edit' : 'Tambah' ?> Guru/Staff</h2>
     <form action="<?= isset($gurustaff) ? site_url('gurustaff/update/' . $gurustaff->id) : site_url('gurustaff/store') ?>" method="post" enctype="multipart/form-data">
@@ -31,5 +22,3 @@
 </div>
 
 <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
-</body>
-</html>

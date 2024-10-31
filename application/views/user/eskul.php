@@ -7,13 +7,16 @@
 <!-- Ekstrakurikuler -->
 <style>
     .card img {
-        height: 200px; /* Tinggi tetap untuk gambar card */
-        object-fit: cover; /* Mengatur gambar agar tidak terdistorsi */
+        height: 200px;
+        /* Tinggi tetap untuk gambar card */
+        object-fit: cover;
+        /* Mengatur gambar agar tidak terdistorsi */
     }
 
     .card {
         cursor: pointer;
-        flex: 1; /* Membuat card mengisi ruang yang tersedia */
+        flex: 1;
+        /* Membuat card mengisi ruang yang tersedia */
     }
 </style>
 <div class="judul" id="#jr" style="color: black;">
@@ -24,10 +27,8 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="false">
     <div class="carousel-inner">
-        <?php 
-        // Hitung total eskul untuk membagi menjadi beberapa carousel-item
-        $eskulChunks = array_chunk($ekstrakurikuler, 3); // Membagi 3 per slide
-
+        <?php
+        $eskulChunks = array_chunk($ekstrakurikuler, 3);
         foreach ($eskulChunks as $index => $eskulItems) : ?>
             <div class="carousel-item <?= ($index == 0) ? 'active' : ''; ?>">
                 <div class="d-flex">

@@ -1,6 +1,6 @@
 <div class="container">
     <h2><?= isset($prestasi) ? 'Edit Prestasi' : 'Tambah Prestasi' ?></h2>
-    <form action="<?= isset($prestasi) ? site_url('prestasi/edit/'.$prestasi['id']) : site_url('prestasi/tambah'); ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= isset($prestasi) ? site_url('prestasi/edit/' . $prestasi['id']) : site_url('prestasi/tambah'); ?>" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="judul" class="form-label">Judul</label>
             <input type="text" class="form-control" id="judul" name="judul" value="<?= isset($prestasi) ? $prestasi['judul'] : ''; ?>" required>
@@ -21,7 +21,7 @@
             <label for="gambar" class="form-label">Gambar</label>
             <input type="file" class="form-control" id="gambar" name="gambar">
             <?php if (isset($prestasi) && $prestasi['gambar']) : ?>
-                <img src="<?= base_url('uploads/prestasi/'.$prestasi['gambar']); ?>" width="100" alt="gambar">
+                <img src="<?= base_url('uploads/prestasi/' . $prestasi['gambar']); ?>" width="100" alt="gambar">
             <?php endif; ?>
         </div>
         <button type="submit" class="btn btn-primary">Simpan</button>

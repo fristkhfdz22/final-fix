@@ -1,37 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sambutan Kepala Sekolah</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"> <!-- Ganti dengan link CSS yang sesuai -->
 </head>
+
 <body>
     <header>
-        <!-- Tambahkan kode header di sini -->
     </header>
-<!-- <div class="container">
-    <h1>Daftar Sarana Prasarana</h1>
-    <table class="table mt-3">
-        <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Jumlah</th>
-                <th>Keterangan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($sarana as $item): ?>
-                <tr>
-                    <td><?= $item->nama; ?></td>
-                    <td><?= $item->jumlah; ?></td>
-                    <td><?= $item->keterangan; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div> -->
-<br>
+    <br>
     <br>
     <br>
     <br>
@@ -43,20 +23,24 @@
     </div>
     <br>
     <style>
-          table {
+        table {
             width: 90%;
             border-collapse: collapse;
             margin-top: 20px;
             margin-left: 5%;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid black;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #686666;
         }
+
         .header {
             font-weight: bold;
             font-size: 18px;
@@ -164,7 +148,7 @@
             <td>Smean Comp</td>
             <td>1 Ruang</td>
         </tr>
-       
+
         <tr>
             <td>Jumlah Lab Total</td>
             <td>3 Ruang</td>
@@ -283,19 +267,20 @@
             <td></td>
             <td>1 Ruang</td>
         </tr>
-       
+
     </table>
     <br>
-    
-    
-    
 
 
 
 
 
-<footer>
 
-</footer>
+
+
+    <footer>
+
+    </footer>
 </body>
+
 </html>

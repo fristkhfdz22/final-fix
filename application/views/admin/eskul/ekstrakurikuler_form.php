@@ -17,14 +17,14 @@
             <label>Logo</label>
             <input type="file" name="logo" class="form-control">
             <?php if (isset($eskul) && $eskul['logo']): ?>
-                <p>Logo saat ini: <img src="<?php echo base_url('uploads/ekstrakurikuler/'.$eskul['logo']); ?>" alt="Logo" width="50"></p>
+                <p>Logo saat ini: <img src="<?php echo base_url('uploads/ekstrakurikuler/' . $eskul['logo']); ?>" alt="Logo" width="50"></p>
             <?php endif; ?>
         </div>
         <div class="form-group">
             <label>Gambar</label>
             <input type="file" name="gambar" class="form-control">
             <?php if (isset($eskul) && $eskul['gambar']): ?>
-                <p>Gambar saat ini: <img src="<?php echo base_url('uploads/ekstrakurikuler/'.$eskul['gambar']); ?>" alt="Gambar" width="50"></p>
+                <p>Gambar saat ini: <img src="<?php echo base_url('uploads/ekstrakurikuler/' . $eskul['gambar']); ?>" alt="Gambar" width="50"></p>
             <?php endif; ?>
         </div>
         <button type="submit" class="btn btn-primary"><?php echo isset($eskul) ? 'Update' : 'Simpan'; ?></button>

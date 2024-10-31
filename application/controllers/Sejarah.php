@@ -1,29 +1,34 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Sejarah extends CI_Controller {
+class Sejarah extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Sejarah_model');
         $this->load->library('upload');
     }
 
-    public function index() {
+    public function index()
+    {
         $data['sejarah'] = $this->Sejarah_model->get_all();
         $this->load->view('admin/header', $data);
         $this->load->view('admin/sidebar');
         $this->load->view('admin/sejarah/sejarah_list', $data);
         $this->load->view('admin/footer');
     }
-    public function view() {
+    public function view()
+    {
         $data['sejarah'] = $this->Sejarah_model->get_all();
-        $this->load->view('user/header'); // Header untuk user
-        $this->load->view('user/sejarah_view', $data); // View user untuk sejarah
-        $this->load->view('user/footer'); // Footer untuk user
+        $this->load->view('user/header');
+        $this->load->view('user/sejarah_view', $data);
+        $this->load->view('user/footer');
     }
-    
-    public function create() {
+
+    public function create()
+    {
         if ($this->input->post()) {
             $data = [
                 'judul' => $this->input->post('judul'),
@@ -31,7 +36,7 @@ class Sejarah extends CI_Controller {
                 'user_id' => $this->session->userdata('user_id')
             ];
 
-            // Proses upload gambar
+
             $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->upload->initialize($config);
@@ -50,7 +55,8 @@ class Sejarah extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $data['sejarah'] = $this->Sejarah_model->get_by_id($id);
         if ($this->input->post()) {
             $data_update = [
@@ -58,7 +64,7 @@ class Sejarah extends CI_Controller {
                 'konten' => $this->input->post('konten')
             ];
 
-            // Proses upload gambar jika ada
+
             if ($_FILES['gambar']['name']) {
                 $config['upload_path'] = './uploads/';
                 $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -79,7 +85,8 @@ class Sejarah extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->Sejarah_model->delete($id);
         redirect('sejarah');
     }

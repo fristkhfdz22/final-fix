@@ -8,21 +8,13 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- App favicon -->
     <link rel="shortcut icon" href="<?php echo base_url('template/assets/img/smkn 1 slawi.png'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('template/assets/css/login.css'); ?>">
-
-    <!-- App css -->
     <link href="assets/bootstrap/css/config/default/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/bootstrap/css/config/default/app.min.css" rel="stylesheet" type="text/css" />
-
     <link href="assets/bootstrap/css/config/default/bootstrap-dark.min.css" rel="stylesheet" type="text/css" disabled="disabled" />
     <link href="assets/bootstrap/css/config/default/app-dark.min.css" rel="stylesheet" type="text/css" disabled="disabled" />
-
-    <!-- icons -->
     <link href="assets/bootstrap/css/icons.min.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body class="loading authentication-bg authentication-bg-pattern">
@@ -46,7 +38,6 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4">
-                    <!-- Notification Placeholder -->
                     <div id="notif"></div>
 
                     <div class="card mt-3">
@@ -64,7 +55,6 @@
                                 <?php endif; ?>
                             </div>
 
-                            <!-- Login form -->
                             <form action="<?php echo site_url('admin/auth'); ?>" method="POST">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
@@ -93,31 +83,20 @@
                             </form>
                             <br>
 
-                            <!-- Register link -->
                             <p class="text-center">Don't Have an Account?
-                                <!-- <a href="register.html" class="text-muted ms-1"><b>Register</b></a> -->
                             </p>
-                        </div> <!-- end card-body -->
-                    </div> <!-- end card -->
+                        </div>
+                    </div>
 
                     <div class="row mt-3">
-                        <!-- <div class="col-12 text-center">
-                            <p>
-                                <a href="recoverpw.html" class="text-muted ms-1">
-                                    <i class="fa fa-lock me-1"></i> Forgot your password?
-                                </a>
-                            </p>
-                        </div> end col -->
-                    </div> <!-- end row -->
-                </div> <!-- end col -->
-            </div> <!-- end row -->
-        </div> <!-- end container -->
-    </div> <!-- end page -->
 
-    <!-- Vendor js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="<?php echo base_url('template/assets/js/bootstrap/js/vendor.min.js'); ?>"></script>
-
-    <!-- App js -->
     <script src="<?php echo base_url('template/assets/js/bootstrap.bundle.min.js'); ?>"></script>
 
 

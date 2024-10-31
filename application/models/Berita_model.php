@@ -1,19 +1,19 @@
 <?php
 
-class Berita_model extends CI_Model {
+class Berita_model extends CI_Model
+{
 
-    // Get all berita
-    // Fungsi untuk mengambil semua berita
-    public function get_all() {
-        $query = $this->db->get('berita'); // Ganti 'berita' dengan nama tabel yang sesuai
+
+    public function get_all()
+    {
+        $query = $this->db->get('berita');
         return $query->result();
     }
-    // Insert new berita
-    public function insert_berita($data) {
-        $this->db->insert('berita', $data); // Insert new berita record
+    public function insert_berita($data)
+    {
+        $this->db->insert('berita', $data);
     }
 
-    // Get berita by ID
     public function get_berita_by_id($id)
     {
         $query = $this->db->get_where('berita', ['id' => $id]);
@@ -22,36 +22,35 @@ class Berita_model extends CI_Model {
         }
         return null;
     }
-    
-    // Update berita
-    public function update_berita($id, $data) {
+
+    public function update_berita($id, $data)
+    {
         $this->db->where('id', $id);
-        $this->db->update('berita', $data); // Update berita record by ID
+        $this->db->update('berita', $data);
     }
 
-    // Soft delete berita
-    public function delete_berita($id) {
-        // You can implement a soft delete here if you want to retain records in the database
+    public function delete_berita($id)
+    {
         $this->db->where('id', $id);
-        $this->db->delete('berita'); // Perform actual deletion
+        $this->db->delete('berita');
     }
 
-    // Handle image upload
-    public function upload_image() {
-        $config['upload_path'] = './uploads/berita/'; // Define the upload path
-        $config['allowed_types'] = 'jpg|jpeg|png|gif'; // Allowed file types
-        $config['max_size'] = 2048; // Maximum size in KB (2MB)
+    public function upload_image()
+    {
+        $config['upload_path'] = './uploads/berita/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['max_size'] = 2048;
 
-        $this->load->library('upload', $config); // Load the upload library
+        $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('img')) {
-            return $this->upload->data('file_name'); // Return the file name on success
+            return $this->upload->data('file_name');
         } else {
-            return false; // Return false if upload fails
+            return false;
         }
     }
-    public function count_all() {
+    public function count_all()
+    {
         return $this->db->count_all('berita');
     }
 }
-?>

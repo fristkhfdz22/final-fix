@@ -1,59 +1,61 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class VisiMisi extends CI_Controller {
+class VisiMisi extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('VisiMisi_model');
-        $this->load->library('upload'); // Memastikan library upload di-load
+        $this->load->library('upload');
     }
 
-    public function index() {
+    public function index()
+    {
         $data['visi_misi'] = $this->VisiMisi_model->get_all();
-        $this->load->view('admin/header', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
         $this->load->view('admin/visimisi/visi_misi_list', $data);
-
         $this->load->view('admin/footer');
     }
 
-    public function create() {
+    public function create()
+    {
         if ($this->input->post()) {
             $data = [
                 'visi' => $this->input->post('visi'),
                 'misi' => $this->input->post('misi'),
-                'user_id' => $this->session->userdata('user_id') // Menyimpan ID user yang login
+                'user_id' => $this->session->userdata('user_id')
             ];
 
-            // Proses upload gambar
-            $config['upload_path'] = './uploads/'; // Pastikan folder uploads sudah ada
+            $config['upload_path'] = './uploads/';
             $config['allowed_types'] = 'jpg|jpeg|png|gif';
             $this->upload->initialize($config);
 
             if ($this->upload->do_upload('gambar')) {
                 $upload_data = $this->upload->data();
-                $data['gambar'] = $upload_data['file_name']; // Simpan nama file ke data
+                $data['gambar'] = $upload_data['file_name'];
             }
 
             $this->VisiMisi_model->insert($data);
-            redirect('visimisi'); // Redirect ke halaman daftar setelah menyimpan
+            redirect('visimisi');
         }
-        $this->load->view('admin/header'); // Menampilkan form untuk menambah data
-        $this->load->view('admin/sidebar'); // Menampilkan form untuk menambah data
-
-        $this->load->view('admin/visimisi/visi_misi_form'); // Menampilkan form untuk menambah data
-        $this->load->view('admin/footer'); // Menampilkan form untuk menambah data
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/visimisi/visi_misi_form');
+        $this->load->view('admin/footer');
     }
-    // controllers/VisiMisi.php
-// controllers/VisiMisi.php
-public function user_view() {
-    $data['visi_misi'] = $this->VisiMisi_model->get_all(); // Ambil semua data Visi & Misi
-    $this->load->view('user/header');
-    $this->load->view('user/visi_misi', $data);
-    $this->load->view('user/footer');
-}
+    public function user_view()
+    {
+        $data['visi_misi'] = $this->VisiMisi_model->get_all();
+        $this->load->view('user/header');
+        $this->load->view('user/visi_misi', $data);
+        $this->load->view('user/footer');
+    }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $data['visi_misi'] = $this->VisiMisi_model->get_by_id($id);
         if ($this->input->post()) {
             $data_update = [
@@ -61,7 +63,6 @@ public function user_view() {
                 'misi' => $this->input->post('misi')
             ];
 
-            // Proses upload gambar jika ada
             if ($_FILES['gambar']['name']) {
                 $config['upload_path'] = './uploads/';
                 $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -69,22 +70,22 @@ public function user_view() {
 
                 if ($this->upload->do_upload('gambar')) {
                     $upload_data = $this->upload->data();
-                    $data_update['gambar'] = $upload_data['file_name']; // Simpan nama file ke data
+                    $data_update['gambar'] = $upload_data['file_name'];
                 }
             }
 
             $this->VisiMisi_model->update($id, $data_update);
-            redirect('visimisi'); // Redirect ke halaman daftar setelah update
+            redirect('visimisi');
         }
-        $this->load->view('admin/header'); // Menampilkan form untuk menambah data
-        $this->load->view('admin/sidebar'); // Menampilkan form untuk menambah data
-
-        $this->load->view('admin/visimisi/visi_misi_form', $data); // Menampilkan form untuk menambah data
-        $this->load->view('admin/footer'); // Menampilkan form untuk menambah data
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/visimisi/visi_misi_form', $data);
+        $this->load->view('admin/footer');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->VisiMisi_model->delete($id);
-        redirect('visimisi'); // Redirect ke halaman daftar setelah menghapus
+        redirect('visimisi');
     }
 }

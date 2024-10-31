@@ -1,17 +1,20 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Prestasi extends CI_Controller {
+class Prestasi extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Prestasi_model');
         $this->load->library('upload');
-        $this->load->helper('text'); // Tambahkan ini untuk memuat text_helper
+        $this->load->helper('text');
     }
 
-    // Menampilkan daftar prestasi
-    public function index() {
+
+    public function index()
+    {
         $data['prestasi'] = $this->Prestasi_model->get_all_prestasi();
         $this->load->view('admin/header');
         $this->load->view('admin/sidebar');
@@ -19,8 +22,9 @@ class Prestasi extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    // Fungsi untuk upload gambar
-    private function _upload_gambar($field_name) {
+
+    private function _upload_gambar($field_name)
+    {
         $config['upload_path'] = './uploads/prestasi/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size'] = 2048;
@@ -33,8 +37,8 @@ class Prestasi extends CI_Controller {
         }
     }
 
-    // Menampilkan form tambah prestasi
-    public function tambah() {
+    public function tambah()
+    {
         if ($this->input->post()) {
             $gambar = $this->_upload_gambar('gambar', 'prestasi');
 
@@ -57,8 +61,9 @@ class Prestasi extends CI_Controller {
         }
     }
 
-    // Menampilkan form edit prestasi
-    public function edit($id) {
+
+    public function edit($id)
+    {
         $data['prestasi'] = $this->Prestasi_model->get_prestasi_by_id($id);
 
         if ($this->input->post()) {
@@ -83,16 +88,17 @@ class Prestasi extends CI_Controller {
         }
     }
 
-    // Menghapus prestasi
-    public function hapus($id) {
+    public function hapus($id)
+    {
         $this->Prestasi_model->delete_prestasi($id);
         redirect('prestasi');
     }
-    public function detail($id) {
+    public function detail($id)
+    {
         $data['prestasi'] = $this->Prestasi_model->get_by_id($id);
 
         if (!$data['prestasi']) {
-            show_404(); // Tampilkan halaman 404 jika ID tidak valid
+            show_404();
         }
         $this->load->view('user/header');
         $this->load->view('user/prestasi/detail', $data);

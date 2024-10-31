@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sambutan Kepala Sekolah</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"> <!-- Ganti dengan link CSS yang sesuai -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 </head>
+
 <body>
     <header>
-        <!-- Tambahkan kode header di sini -->
     </header>
     <br>
     <br>
@@ -22,8 +23,8 @@
     </div>
     <br>
     <div class="imagepmr">
-    <?php if (!empty($prestasi->gambar)): ?>
-        <img src="<?= base_url('uploads/prestasi/' . $prestasi->gambar); ?>" alt="pmr" class="pmr-img" width="50%" style="margin-left: 25%;">
+        <?php if (!empty($prestasi->gambar)): ?>
+            <img src="<?= base_url('uploads/prestasi/' . $prestasi->gambar); ?>" alt="pmr" class="pmr-img" width="50%" style="margin-left: 25%;">
         <?php endif; ?>
     </div>
     <br>
@@ -33,7 +34,7 @@
     </div>
     <br>
     <div class="isisambutan">
-    <?= $prestasi->deskripsi; ?>
+        <?= $prestasi->deskripsi; ?>
     </div>
     <br>
     <div class="containersambutankepalasekolah" style="display: flex; align-items: center;">
@@ -47,47 +48,46 @@
         <h4 style="font-size: 1.25rem; margin-left: 2rem;">:</h4>
         <h4 style="font-size: 1.25rem; margin-left: 1rem;"><?= $prestasi->penulis; ?></h4>
     </div>
-    
+
     <style>
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .containersambutankepalasekolah h4 {
                 font-size: 1rem;
             }
-    
-            .containersambutankepalasekolah h4 + h4 {
+
+            .containersambutankepalasekolah h4+h4 {
                 margin-left: 1.5rem;
             }
-    
+
             .containersambutankepalasekolah h4:nth-child(3) {
                 margin-left: 0.75rem;
             }
         }
-    
+
         @media (max-width: 480px) {
             .containersambutankepalasekolah h4 {
                 font-size: 0.875rem;
             }
-    
-            .containersambutankepalasekolah h4 + h4 {
+
+            .containersambutankepalasekolah h4+h4 {
                 margin-left: 1rem;
             }
-    
+
             .containersambutankepalasekolah h4:nth-child(3) {
                 margin-left: 0.5rem;
             }
         }
     </style>
-    
-    
+
+
     <br>
     <br>
     <br>
-    
+
 
 
     <footer>
-        <!-- Tambahkan kode footer di sini -->
     </footer>
 </body>
+
 </html>

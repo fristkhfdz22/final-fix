@@ -44,7 +44,7 @@ class Gurustaff extends CI_Controller {
             redirect('gurustaff');
         } else {
             $error = $this->upload->display_errors();
-            echo $error; // Tampilkan error jika upload gagal
+            echo $error; 
         }
     }
 
@@ -63,7 +63,7 @@ class Gurustaff extends CI_Controller {
             'jabatan' => $this->input->post('jabatan')
         ];
 
-        // Cek apakah ada gambar yang diupload
+    
         if ($_FILES['gambar']['name']) {
             $config['upload_path'] = './uploads/gurustaff/';
             $config['allowed_types'] = 'jpg|jpeg|png';
@@ -75,7 +75,7 @@ class Gurustaff extends CI_Controller {
                 $data['gambar'] = $upload_data['file_name'];
             } else {
                 $error = $this->upload->display_errors();
-                echo $error; // Tampilkan error jika upload gagal
+                echo $error; /
                 return;
             }
         }
@@ -89,15 +89,15 @@ class Gurustaff extends CI_Controller {
         redirect('gurustaff');
     }
     public function all() {
-        $data['gurustaff'] = $this->Gurustaff_model->get_all(); // Mengambil semua data guru dan staff
+        $data['gurustaff'] = $this->Gurustaff_model->get_all(); 
         
-        // Jika data tidak ditemukan, tampilkan halaman 404
+
         if (empty($data['gurustaff'])) {
             show_404();
         }
         $this->load->view('user/header');
 
-        $this->load->view('user/gurustaff/detail', $data); // Menampilkan view dengan semua data
+        $this->load->view('user/gurustaff/detail', $data); 
         $this->load->view('user/footer');
 
     }

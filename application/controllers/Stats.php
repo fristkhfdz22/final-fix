@@ -1,14 +1,17 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Stats extends CI_Controller {
+class Stats extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Stats_model');
     }
 
-    public function index() {
+    public function index()
+    {
         $data['stats'] = $this->Stats_model->get_all();
         $this->load->view('admin/header');
         $this->load->view('admin/sidebar');
@@ -18,15 +21,16 @@ class Stats extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function create() {
+    public function create()
+    {
         $this->load->view('admin/header');
         $this->load->view('admin/sidebar');
         $this->load->view('admin/stats/stats_form');
         $this->load->view('admin/footer');
-
     }
 
-    public function store() {
+    public function store()
+    {
         $data = [
             'jumlah_siswa' => $this->input->post('jumlah_siswa'),
             'rombongan_belajar' => $this->input->post('rombongan_belajar'),
@@ -36,16 +40,17 @@ class Stats extends CI_Controller {
         redirect('stats');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $data['stat'] = $this->Stats_model->get_by_id($id);
         $this->load->view('admin/header');
         $this->load->view('admin/sidebar');
         $this->load->view('admin/stats/stats_form', $data);
         $this->load->view('admin/footer');
-
     }
 
-    public function update($id) {
+    public function update($id)
+    {
         $data = [
             'jumlah_siswa' => $this->input->post('jumlah_siswa'),
             'rombongan_belajar' => $this->input->post('rombongan_belajar'),
@@ -55,7 +60,8 @@ class Stats extends CI_Controller {
         redirect('stats');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $this->Stats_model->delete($id);
         redirect('stats');
     }

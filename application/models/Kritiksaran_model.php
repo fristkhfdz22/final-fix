@@ -8,22 +8,21 @@ class Kritiksaran_model extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        $this->load->database(); // Memuat database
+        $this->load->database();
     }
 
-    // Menyimpan kritik dan saran
     public function insert($data)
     {
         return $this->db->insert($this->table, $data);
     }
 
-    // Mengambil semua data kritik dan saran
     public function get_all()
     {
         $query = $this->db->get($this->table);
         return $query->result();
     }
-    public function count_all() {
+    public function count_all()
+    {
         return $this->db->count_all('kritiksaran');
     }
 }

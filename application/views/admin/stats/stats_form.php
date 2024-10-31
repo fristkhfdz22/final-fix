@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($stat) ? 'Edit Statistik' : 'Tambah Statistik'; ?></title>
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
-</head>
-<body>
-
 <div class="container mt-5">
     <h2 class="text-center"><?= isset($stat) ? 'Edit Statistik' : 'Tambah Statistik'; ?></h2>
-    <form action="<?= isset($stat) ? site_url('stats/update/'.$stat->id) : site_url('stats/store'); ?>" method="post">
+    <form action="<?= isset($stat) ? site_url('stats/update/' . $stat->id) : site_url('stats/store'); ?>" method="post">
         <div class="form-group">
             <label for="jumlah_siswa">Jumlah Siswa</label>
             <input type="number" class="form-control" id="jumlah_siswa" name="jumlah_siswa" value="<?= isset($stat) ? $stat->jumlah_siswa : ''; ?>" required>
@@ -29,5 +19,3 @@
 </div>
 
 <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
-</body>
-</html>

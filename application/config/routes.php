@@ -51,83 +51,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */$route['default_controller'] = 'user'; // Default controller for users
 $route['admin'] = 'admin/login'; // Redirect /admin to the login method in Admin controller
 $route['admin/dashboard'] = 'admin/dashboard'; // Route for admin dashboard
-$route['admin/auth'] = 'admin/auth'; // Route for handling authentication (login processing)
+$route['admin/auth'] = 'admin/auth'; 
 $route['admin/kepalasekolah'] = 'admin/kepalasekolah/kepalasekolah_crud';
 $route['ekstrakurikuler'] = 'ekstrakurikuler/index';
 $route['ekstrakurikuler/tambah'] = 'ekstrakurikuler/tambah';
-$route['ekstrakurikuler/edit/(:any)'] = 'ekstrakurikuler/edit/$1';    // Menggunakan slug
-$route['ekstrakurikuler/hapus/(:any)'] = 'ekstrakurikuler/hapus/$1';  // Menggunakan slug
-$route['ekstrakurikuler/detail/(:any)'] = 'eskuldetail/index/$1';     // Menggunakan slug
-
+$route['ekstrakurikuler/edit/(:any)'] = 'ekstrakurikuler/edit/$1';    
+$route['ekstrakurikuler/hapus/(:any)'] = 'ekstrakurikuler/hapus/$1';  
+$route['ekstrakurikuler/detail/(:any)'] = 'eskuldetail/index/$1';     
 $route['berita/detail/(:num)'] = 'BeritaDetail/index/$1';
-
-// $route['jurusan/detail/(:num)'] = 'JurusanDetail/index/$1';
-
-$route['prestasi'] = 'prestasi/index';                 // Menampilkan daftar prestasi
-$route['prestasi/tambah'] = 'prestasi/tambah';         // Menampilkan form tambah prestasi
-$route['prestasi/edit/(:num)'] = 'prestasi/edit/$1';   // Menampilkan form edit prestasi berdasarkan ID
-$route['prestasi/hapus/(:num)'] = 'prestasi/hapus/$1'; // Hapus prestasi berdasarkan ID
+$route['prestasi'] = 'prestasi/index';                
+$route['prestasi/tambah'] = 'prestasi/tambah';         
+$route['prestasi/edit/(:num)'] = 'prestasi/edit/$1';  
+$route['prestasi/hapus/(:num)'] = 'prestasi/hapus/$1'; 
 $route['gurustaff'] = 'Gurustaff/index';
 $route['gurustaff/create'] = 'Gurustaff/create';
 $route['gurustaff/edit/(:num)'] = 'Gurustaff/edit/$1';
 $route['gurustaff/delete/(:num)'] = 'Gurustaff/delete/$1';
 $route['gurustaff/detail'] = 'gurustaff/all';
-
 $route['kontak'] = 'kontak/index';
 $route['kontak/add'] = 'kontak/add';
 $route['kontak/save'] = 'kontak/save';
-$route['user'] = 'user/index'; // Ganti 'user/index' sesuai controller dan method tampilan utama Anda
-$route['kritiksaran/submit'] = 'kritiksaran/submit'; // Proses pengiriman kritik dan saran
-$route['admin/kritiksaran'] = 'kritiksaran/list'; // Daftar kritik dan saran untuk admin
-
+$route['user'] = 'user/index'; 
+$route['kritiksaran/submit'] = 'kritiksaran/submit';
+$route['admin/kritiksaran'] = 'kritiksaran/list'; 
 $route['user/kepsek/detail'] = 'Kepsekdetail/index';
 $route['berita/detail'] = 'beritadetail/index/';
 $route['berita/detail_kedua'] = 'Berita/detail_kedua';
-
-
-// Routes for Pengumuman CRUD
-
-$route['admin/pengumuman'] = 'admin/pengumuman_list'; // Route for listing all announcements
-$route['admin/berita'] = 'berita'; // To list all berita
-$route['admin/berita/tambah'] = 'berita/tambah'; // To add berita
-$route['admin/berita/edit/(:num)'] = 'berita/edit/$1'; // To edit berita
-$route['admin/berita/delete/(:num)'] = 'berita/delete/$1'; // To delete berita
+$route['admin/pengumuman'] = 'admin/pengumuman_list'; 
+$route['admin/berita'] = 'berita'; 
+$route['admin/berita/tambah'] = 'berita/tambah'; 
+$route['admin/berita/edit/(:num)'] = 'berita/edit/$1'; 
+$route['admin/berita/delete/(:num)'] = 'berita/delete/$1'; 
 $route['jurusan'] = 'jurusan/view';
-
 $route['admin/jurusan'] = 'jurusan';
 $route['admin/jurusan/tambah'] = 'jurusan/tambah';
 $route['admin/jurusan/edit/(:num)'] = 'jurusan/edit/$1';
 $route['admin/jurusan/delete/(:num)'] = 'jurusan/delete/$1';
 $route['jurusan/detail/(:num)'] = 'jurusan/detail/$1';
-// Routing untuk Admin Panel
-// $route['admin/visimisi'] = 'admin/VisiMisi/index'; // Daftar visi dan misi
-// $route['admin/visimisi/create'] = 'admin/VisiMisi/create'; // Form untuk menambah visi dan misi
-// $route['admin/visimisi/edit/(:num)'] = 'admin/VisiMisi/edit/$1'; // Form untuk edit visi dan misi
-// $route['admin/visimisi/delete/(:num)'] = 'admin/VisiMisi/delete/$1'; // Menghapus visi dan misi
-// $route['admin/visimisi/view/(:num)'] = 'admin/VisiMisi/view/$1'; // Melihat detail visi dan misi
-
-// // Routing untuk User Side
-// $route['visimisi'] = 'VisiMisi/index'; // Menampilkan visi dan misi
-
-$route['admin/Visimisi'] = 'VisiMisi/index'; // Menampilkan daftar
-$route['visimisi/create'] = 'VisiMisi/create'; // Menampilkan form tambah
-$route['visimisi/edit/(:num)'] = 'VisiMisi/edit/$1'; // Menampilkan form edit
-$route['visimisi/delete/(:num)'] = 'VisiMisi/delete/$1'; // Menghapus data
+$route['admin/Visimisi'] = 'VisiMisi/index'; 
+$route['visimisi/create'] = 'VisiMisi/create'; 
+$route['visimisi/edit/(:num)'] = 'VisiMisi/edit/$1'; 
+$route['visimisi/delete/(:num)'] = 'VisiMisi/delete/$1'; 
 $route['visimisi'] = 'VisiMisi/user_view';
 $route['sejarah'] = 'Sejarah/index';
 $route['sejarah/create'] = 'Sejarah/create';
 $route['sejarah/edit/(:num)'] = 'Sejarah/edit/$1';
 $route['sejarah/delete/(:num)'] = 'Sejarah/delete/$1';
 $route['sejarah-user'] = 'Sejarah/view';
-// Routing untuk admin CRUD info_ppdb
 $route['admin/infoppdb'] = 'InfoPpdb/index';
 $route['admin/infoppdb/create'] = 'InfoPpdb/create';
 $route['admin/infoppdb/edit/(:num)'] = 'InfoPpdb/edit/$1';
 $route['admin/infoppdb/delete/(:num)'] = 'InfoPpdb/delete/$1';
-
-// Routing untuk tampilan user info_ppdb
 $route['info_ppdb'] = 'InfoPpdb/view';
-
 $route['saranaprasarana/admin'] = 'saranaprasarana/index';
 $route['saranaprasarana/create'] = 'saranaprasarana/create';
 $route['saranaprasarana/store'] = 'saranaprasarana/store';
@@ -135,28 +110,21 @@ $route['saranaprasarana/edit/(:num)'] = 'saranaprasarana/edit/$1';
 $route['saranaprasarana/update/(:num)'] = 'saranaprasarana/update/$1';
 $route['saranaprasarana/delete/(:num)'] = 'saranaprasarana/delete/$1';
 $route['saranaprasarana'] = 'saranaprasarana/view';
-
-$route['galeri'] = 'galeri/index'; // untuk tampilan user
-$route['admin/galeri'] = 'galeri/index'; // untuk tampilan admin
-
-$route['galeri/create'] = 'galeri/create'; // Menampilkan form tambah galeri
-$route['galeri/store'] = 'galeri/store'; // Menyimpan data galeri baru
-$route['galeri/edit/(:any)'] = 'galeri/edit/$1'; // Menampilkan form edit galeri
-$route['galeri/update/(:any)'] = 'galeri/update/$1'; // Mengupdate data galeri
-$route['galeri/delete/(:any)'] = 'galeri/delete/$1'; // Menghapus galeri
-
-$route['galeri/view'] = 'galeri/view'; // Rute untuk tampilan galeri untuk user
+$route['galeri'] = 'galeri/index'; 
+$route['admin/galeri'] = 'galeri/index'; 
+$route['galeri/create'] = 'galeri/create'; 
+$route['galeri/store'] = 'galeri/store'; 
+$route['galeri/edit/(:any)'] = 'galeri/edit/$1'; 
+$route['galeri/update/(:any)'] = 'galeri/update/$1'; 
+$route['galeri/delete/(:any)'] = 'galeri/delete/$1'; 
+$route['galeri/view'] = 'galeri/view'; 
 $route['stats'] = 'stats/index';
 $route['stats/create'] = 'stats/create';
 $route['stats/store'] = 'stats/store';
 $route['stats/edit/(:any)'] = 'stats/edit/$1';
 $route['stats/update/(:any)'] = 'stats/update/$1';
 $route['stats/delete/(:any)'] = 'stats/delete/$1';
-
-
-
-
-
+$route['404_override'] = 'errors/page_missing';
 
 
 

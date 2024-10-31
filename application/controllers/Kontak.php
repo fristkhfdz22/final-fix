@@ -16,7 +16,6 @@ class Kontak extends CI_Controller
         $this->load->view('admin/sidebar');
         $this->load->view('admin/kontak/kontak_list', $data);
         $this->load->view('admin/footer');
-
     }
 
     public function edit($id)
@@ -26,7 +25,6 @@ class Kontak extends CI_Controller
         $this->load->view('admin/sidebar');
         $this->load->view('admin/kontak/kontak_form', $data);
         $this->load->view('admin/footer');
-
     }
 
     public function update()
@@ -55,7 +53,6 @@ class Kontak extends CI_Controller
         $this->load->view('admin/sidebar');
         $this->load->view('admin/kontak/kontak_form');
         $this->load->view('admin/footer');
-
     }
 
     public function save()

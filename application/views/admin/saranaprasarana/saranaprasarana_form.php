@@ -1,6 +1,6 @@
 <div class="container">
     <h1><?= isset($sarana) ? 'Edit' : 'Tambah' ?> Sarana Prasarana</h1>
-    <form action="<?= isset($sarana) ? site_url('saranaprasarana/update/'.$sarana->id) : site_url('saranaprasarana/store') ?>" method="post">
+    <form action="<?= isset($sarana) ? site_url('saranaprasarana/update/' . $sarana->id) : site_url('saranaprasarana/store') ?>" method="post">
         <div class="form-group">
             <label for="nama">Nama</label>
             <input type="text" class="form-control" id="nama" name="nama" value="<?= isset($sarana) ? $sarana->nama : '' ?>" required>

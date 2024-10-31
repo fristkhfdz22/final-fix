@@ -1,60 +1,57 @@
 <br>
 <br>
 <br>
-
-<!-- prestasi -->
-
 <style>
     .card img {
-        height: 200px; /* Tinggi tetap untuk gambar card */
-        object-fit: cover; /* Mengatur gambar agar tidak terdistorsi */
+        height: 200px;
+        object-fit: cover;
     }
 
     .card {
         cursor: pointer;
-        flex: 1; /* Membuat card mengisi ruang yang tersedia */
+        flex: 1;
     }
 </style>
 
-<div class="judul" style="color: black; "id="prestasi">
+<div class="judul" style="color: black; " id="prestasi">
     <h1>Prestasi</h1>
     <div class="underline"></div>
 </div>
 <br>
 
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="false">
-<div class="carousel-inner" id="prestasi">
-            <?php if (!empty($prestasi) && is_array($prestasi)): ?>
-                <?php $active = 'active'; ?>
-                <?php foreach (array_chunk($prestasi, 3) as $chunk): ?>
-                    <div class="carousel-item <?= $active; ?>">
-                        <div class="d-flex">
-                            <?php foreach ($chunk as $item): ?>
-                                <?php if (is_object($item)): ?>
-                                    <div class="col-4 p-2">
-                                        <div class="card">
-                                            <a href="<?= site_url('prestasi/detail/' . $item->id); ?>">
+    <div class="carousel-inner" id="prestasi">
+        <?php if (!empty($prestasi) && is_array($prestasi)): ?>
+            <?php $active = 'active'; ?>
+            <?php foreach (array_chunk($prestasi, 3) as $chunk): ?>
+                <div class="carousel-item <?= $active; ?>">
+                    <div class="d-flex">
+                        <?php foreach ($chunk as $item): ?>
+                            <?php if (is_object($item)): ?>
+                                <div class="col-4 p-2">
+                                    <div class="card">
+                                        <a href="<?= site_url('prestasi/detail/' . $item->id); ?>">
                                             <?php if (!empty($item->gambar) && file_exists('uploads/prestasi/' . $item->gambar)): ?>
                                                 <img src="<?= base_url('uploads/prestasi/' . $item->gambar); ?>" class="card-img-top" alt="<?= htmlspecialchars($item->judul); ?>" style="height: 200px; object-fit: cover;">
                                             <?php else: ?>
                                                 <img src="<?= base_url('uploads/default-image.jpg'); ?>" class="card-img-top" alt="Gambar Default" style="height: 200px; object-fit: cover;"> <!-- Gambar default -->
                                             <?php endif; ?>
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title"><?= isset($item->judul) ? htmlspecialchars($item->judul) : 'Judul Tidak Tersedia'; ?></h5>
-                                                <p class="card-text"><?= isset($item->deskripsi) ? htmlspecialchars($item->deskripsi) : 'Deskripsi Tidak Tersedia'; ?></p>
-                                                <h6 class="card-date"><?= isset($item->tanggal) ? htmlspecialchars($item->tanggal) : 'Tanggal Tidak Tersedia'; ?></h6>
-                                                <div class="icon-text">
-                                                    <i class="fas fa-user"></i>
-                                                    <span>: <?= isset($item->penulis) ? htmlspecialchars($item->penulis) : 'penulis Tidak Tersedia'; ?></span>
-                                                </div>
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= isset($item->judul) ? htmlspecialchars($item->judul) : 'Judul Tidak Tersedia'; ?></h5>
+                                            <p class="card-text"><?= isset($item->deskripsi) ? htmlspecialchars($item->deskripsi) : 'Deskripsi Tidak Tersedia'; ?></p>
+                                            <h6 class="card-date"><?= isset($item->tanggal) ? htmlspecialchars($item->tanggal) : 'Tanggal Tidak Tersedia'; ?></h6>
+                                            <div class="icon-text">
+                                                <i class="fas fa-user"></i>
+                                                <span>: <?= isset($item->penulis) ? htmlspecialchars($item->penulis) : 'penulis Tidak Tersedia'; ?></span>
                                             </div>
                                         </div>
                                     </div>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>            <?php $active = ''; ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div> <?php $active = ''; ?>
             <?php endforeach; ?>
         <?php else: ?>
             <div class="carousel-item active">

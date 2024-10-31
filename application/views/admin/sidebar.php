@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin/dashboard');?>">
+                <a class="nav-link" href="<?php echo base_url('admin/dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -39,18 +39,18 @@
                         <a class="collapse-item" href="<?php echo base_url('prestasi'); ?>">prestasi</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/infoppdb'); ?>">Info PPDB</a>
                         <a class="collapse-item" href="<?php echo base_url('sejarah'); ?>">Sejarah</a>
-                        <a class="collapse-item" href="<?php echo base_url('stats'); ?>">Sejarah</a>
+                        <a class="collapse-item" href="<?php echo base_url('stats'); ?>">Rombel</a>
 
 
-  
+
 
                     </div>
                 </div>
             </li>
             <!-- Divider -->
-            
-<hr class="sidebar-divider">
-<li class="nav-item active">
+
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -59,8 +59,8 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('kepalasekolah'); ?>">Kepala Sekolah (Sambutan)</a>
-                        <a class="collapse-item" href="<?php echo base_url('jurusan'); ?>">jurusan</a>
+                        <a class="collapse-item" href="<?= base_url('kepalasekolah'); ?>">Kepala Sekolah (Sambutan)</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/jurusan'); ?>">jurusan</a>
                         <a class="collapse-item" href="<?php echo base_url('ekstrakurikuler'); ?>">Ekstrakurikuler</a>
                         <a class="collapse-item" href="<?php echo base_url('gurustaff'); ?>">Gurustaff</a>
                         <a class="collapse-item" href="<?php echo base_url('kontak'); ?>">Kontak</a>
@@ -68,48 +68,26 @@
                         <a class="collapse-item" href="<?= base_url('admin/Visimisi'); ?>">Visi & Misi</a>
                         <a class="collapse-item" href="<?php echo site_url('admin/galeri'); ?>">Galery</a>
                         <a class="collapse-item" href="<?php echo site_url('saranaprasarana/admin'); ?>">SaranaPrasarana</a>
-
-
-
                     </div>
                 </div>
             </li>
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
-            <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
         </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-
-                    <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -126,16 +104,12 @@
                                 </form>
                             </div>
                         </li>
-
-                        <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
-                            <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
@@ -177,16 +151,12 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                             </div>
                         </li>
-
-                        <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
-                            <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
@@ -245,8 +215,6 @@
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -254,12 +222,11 @@
                                 <img class="img-profile rounded-circle"
                                     src="<?php echo base_url('template/admin/img/undraw_profile.svg'); ?>">
                             </a>
-                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
+
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php echo site_url('admin'); ?>" >
+                                <a class="dropdown-item" href="<?php echo site_url('admin'); ?>">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

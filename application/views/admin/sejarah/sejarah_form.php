@@ -1,18 +1,28 @@
-<!-- views/admin/sejarah_form.php -->
-<h2><?= isset($sejarah) ? 'Edit' : 'Tambah'; ?> Sejarah</h2>
+<div class="container mt-4">
+    <h2><?= isset($sejarah) ? 'Edit' : 'Tambah'; ?> Sejarah</h2>
 
-<form action="" method="post" enctype="multipart/form-data">
-    <label>Judul:</label><br>
-    <input type="text" name="judul" value="<?= isset($sejarah) ? $sejarah['judul'] : ''; ?>"><br>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="judul" class="form-label">Judul:</label>
+            <input type="text" class="form-control" id="judul" name="judul" value="<?= isset($sejarah) ? $sejarah['judul'] : ''; ?>" required>
+        </div>
 
-    <label>Konten:</label><br>
-    <textarea name="konten"><?= isset($sejarah) ? $sejarah['konten'] : ''; ?></textarea><br>
+        <div class="mb-3">
+            <label for="konten" class="form-label">Konten:</label>
+            <textarea class="form-control" id="konten" name="konten" rows="5"><?= isset($sejarah) ? $sejarah['konten'] : ''; ?></textarea>
+        </div>
 
-    <label>Gambar:</label><br>
-    <?php if (isset($sejarah) && $sejarah['gambar']): ?>
-        <img src="<?= base_url('uploads/' . $sejarah['gambar']); ?>" width="100"><br>
-    <?php endif; ?>
-    <input type="file" name="gambar"><br><br>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar:</label><br>
+            <?php if (isset($sejarah) && $sejarah['gambar']): ?>
+                <div class="mb-2">
+                    <p>Gambar saat ini:</p>
+                    <img src="<?= base_url('uploads/' . $sejarah['gambar']); ?>" width="100" alt="Current Image">
+                </div>
+            <?php endif; ?>
+            <input type="file" class="form-control" id="gambar" name="gambar">
+        </div>
 
-    <button type="submit"><?= isset($sejarah) ? 'Update' : 'Simpan'; ?></button>
-</form>
+        <button type="submit" class="btn btn-primary"><?= isset($sejarah) ? 'Update' : 'Simpan'; ?></button>
+    </form>
+</div>

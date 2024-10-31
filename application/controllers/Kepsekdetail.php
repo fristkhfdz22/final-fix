@@ -1,20 +1,22 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kepsekdetail extends CI_Controller {
+class Kepsekdetail extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
-        $this->load->model('Kepalasekolah_model'); // Memuat model
+        $this->load->model('Kepalasekolah_model');
     }
 
-    public function index() {
-        // Mengambil data kepala sekolah
+    public function index()
+    {
+
         $data['kepalasekolah'] = $this->Kepalasekolah_model->get_first();
 
-        // Memuat tampilan
-        $this->load->view('user/header', $data); // Memuat header
-        $this->load->view('user/kepsekdetail/detail', $data); // Memuat detail
-        $this->load->view('user/footer'); // Memuat footer
+        $this->load->view('user/header', $data);
+        $this->load->view('user/kepsekdetail/detail', $data);
+        $this->load->view('user/footer');
     }
 }

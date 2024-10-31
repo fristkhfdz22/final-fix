@@ -1,29 +1,34 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ekstrakurikuler extends CI_Controller {
+class Ekstrakurikuler extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Ekstrakurikuler_model');
         $this->load->library('upload');
     }
 
-    public function index() {
+    public function index()
+    {
         $data['ekstrakurikuler'] = $this->Ekstrakurikuler_model->get_all_ekstrakurikuler();
         $this->load->view('admin/header');
         $this->load->view('admin/sidebar');
         $this->load->view('admin/eskul/ekstrakurikuler_list', $data);
         $this->load->view('admin/footer');
     }
-    public function view() {
+    public function view()
+    {
         $data['ekstrakurikuler'] = $this->Ekstrakurikuler_model->get_all_ekstrakurikuler();
         $this->load->view('user/header');
         $this->load->view('user/eskul', $data);
         $this->load->view('user/footer');
     }
 
-    private function _upload_file($field_name, $upload_path) {
+    private function _upload_file($field_name, $upload_path)
+    {
         $config['upload_path'] = './uploads/ekstrakurikuler';
         $config['allowed_types'] = 'jpg|png|jpeg';
         $config['max_size'] = 2048; // 2MB max
@@ -36,7 +41,8 @@ class Ekstrakurikuler extends CI_Controller {
         }
     }
 
-    public function tambah() {
+    public function tambah()
+    {
         if ($this->input->post()) {
             $logo = $this->_upload_file('logo', 'ekstrakurikuler');
             $gambar = $this->_upload_file('gambar', 'ekstrakurikuler');
@@ -58,7 +64,8 @@ class Ekstrakurikuler extends CI_Controller {
         }
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $data['eskul'] = $this->Ekstrakurikuler_model->get_eskul_by_id($id);
 
         if ($this->input->post()) {
@@ -82,7 +89,8 @@ class Ekstrakurikuler extends CI_Controller {
         }
     }
 
-    public function hapus($id) {
+    public function hapus($id)
+    {
         $this->Ekstrakurikuler_model->delete_eskul($id);
         redirect('ekstrakurikuler');
     }

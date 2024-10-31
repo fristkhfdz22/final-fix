@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sambutan Kepala Sekolah</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>"> <!-- Ganti dengan link CSS yang sesuai -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 </head>
+
 <body>
     <header>
-        <!-- Tambahkan kode header di sini -->
     </header>
 
     <main>
@@ -38,7 +39,7 @@
     </main>
 
     <footer>
-        <!-- Tambahkan kode footer di sini -->
     </footer>
 </body>
+
 </html>
